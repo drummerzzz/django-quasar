@@ -61,3 +61,6 @@ git-up:
 create-venv: .create-venv
 
 all: create-venv setup-dev #git-up
+
+front:
+	yarn build

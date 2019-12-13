@@ -1,0 +1,77 @@
+{% load static %}
+<footer class="page-footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h6>acesso rápido</h6>
+                            <ul class="footmenu">
+                                <li><a href="#">Sobre</a>
+                                </li>
+                                <li><a href="{% url 'signup:simple_plan_choice' %}">Preços e planos</a>
+                                </li>
+                                <li>
+                                    <a target=" _blank" href="http://ajuda.viralize.online/">Ajuda</a>
+                                </li>
+                                <li><a href="{% url 'signup:theme_choice' %}">Ganhe uma publicação</a>
+                                </li>
+                                <li><a href="{% url 'login' %}">Acesse sua conta</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <h6>ajuda</h6>
+                            <ul class="footmenu ">
+                                <li><a href="http://ajuda.viralize.online/perguntas-frequentes/">Perguntas frequentes</a>
+                                </li>
+                                <li><a href="# ">Tutoriais</a>
+                                </li>
+                                <li><a href="{% url 'home:investidor' %}">Investidores</a>
+                                </li>
+                                <li><a target="_blank " href="http://ajuda.viralize.online/ ">Central de ajuda</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-right ">
+                    <div class="footlogo mb-4 ">
+                        <a href="# ">
+                            <img src="{% static 'images/logo.png' %} " alt=" ">
+                        </a>
+                    </div>
+                    <ul class="social ">
+                        <li><a href="https://www.youtube.com/channel/UCdCC1bs3RQyIUES3IFVTyHg " target="_blank "><i class="fa fa-youtube-play "></i></a>
+                        </li>
+                        <li><a href="https://viralize.online/www.facebook.com/viralize.online " target="_blank "><i class="fa fa-facebook "></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/viralize.online " target="_blank "><i class="fa fa-instagram "></i></a>
+                        </li>
+                        <li><a href="https://viralize.online/linkedin.com/viralize.online " target="_blank "><i class="fa fa-linkedin "></i></a>
+                        </li>
+                    </ul>
+                    <p>ALRA SERVIÇOS ONLINE ME LTDA | CNPJ 22.402.285/0001-20
+                        <br>Rua Santa Catarina, 981, Floresta | Joinville - SC, Brasil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom ">
+        <div class="container ">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <img src="{% static 'images/secure.png' %} " alt=" ">
+                </div>
+                <div class="col-12 col-lg-5 align-self-center text-right ">
+                    <a target="_blank ">
+                        <img width="174px " height="37px " src="{% static 'images/footlogo.png' %} " alt=" ">
+                    </a>
+                </div>
+                <div class="col-12 d-blok d-lg-none" style="height: 5rem !important;"></div>
+            </div>
+        </div>
+    </div>
+</footer>

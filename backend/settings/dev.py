@@ -36,11 +36,24 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django_celery_results',
+    'django_celery_beat',
     'whitenoise.runserver_nostatic',  # < Per Whitenoise, to disable built in
     'django.contrib.staticfiles',
     'rest_framework',
     'backend.api',
+    "cloudinary",
+    "storages",
+    # "backend.registration.signup",
+    # "users",
+    # "posts",
+    # "payments",
+    # "home",
+    # "dashboard",
+    # "descontos",
+    # "backend.customer_posts"
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +72,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Add dist to
-        'DIRS': ['dist'],
+        'DIRS': ['dist', 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

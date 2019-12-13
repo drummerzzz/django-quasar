@@ -1,0 +1,7 @@
+{% extends 'admin/change_form.html' %} {% block submit_buttons_bottom %} {{ block.super }} {% if object_id %}
+<p style="float: right">Cuidado esta ação não pode ser desfeita</p>
+<br><br>
+<div class="submit-row">
+    <a class="btn" href="{% url 'users:regenarete_post' object_id %}" style="background: black; color: white;padding: 10px; border-radius: 5px">Gerar novamente</a>
+</div>
+{% endif %} {% endblock %} {% block after_related_objects %} {% endblock %}

@@ -1,0 +1,12 @@
+<h6>{{today}}</h6>
+<h1 style="margin: 0; padding: 0; font-size: 60px; text-align: center; font-weight: bold">Viralize</h1>
+<h4 style="margin: 0; padding: 0; font-size: 20px; text-align: center;">{{description}}</h4>
+<br> {% for c in clientes %}
+<ul style="font-size:18px; font-weight: bold;">
+    <li>{{c.name}}</li>
+    <li>{{c.email}}</li>
+    <li>{{c.whatsapp}}</li>
+    <li>{{c.theme}}</li>
+    <hr>
+</ul>
+{% endfor %}

@@ -1,0 +1,85 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<style>
+	#form-login {
+		max-width: 320px;
+		margin: 0 auto;
+		text-align: centerr;
+	}
+	#form-login p label{min-width: 80px;};
+	#form-login p input{width: 230px !important; min-width:230px !important;};
+
+	#id_username {width: 230px;}
+	#form-login p{
+		text-align: left !important;
+	};
+	#form-login h2{
+		text-align: center;
+	}
+
+	.form-footer {
+		text-align: center;
+	}
+	.form-footer button {
+		width: 100%;
+	}
+
+</style>
+
+
+	<div class="row" style="text-align: center;">
+			<div class="col-sm-12" style="text-align: center; position: relative; padding: 25px;">
+				<img src="{% static "viralize-beta-logo.png" %}" alt="" width="300">
+				<br>
+				<br>
+				<br>
+	
+	<h2>Entrar </h2>
+			</div>
+	</div>
+	
+	<form method="post" id="form-login" >
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <p class="form-footer">
+	  	
+	  <button class="btn btn-success" type="submit">Login</button>
+	  </p>
+		<a id="btn-signup-link" href="/cadastro"  class="btn btn-purple">Criar nova conta</a>
+	</form>
+	<style>
+		#form-login {
+		max-width: 320px;
+		margin: 0 auto;
+		text-align: centerr;
+	}
+	#form-login p label{min-width: 80px;};
+	#form-login p input{width: 230px !important; min-width:230px !important;};
+
+	#form-login p{
+		text-align: left !important;
+	};
+	#form-login h2{
+		text-align: center;
+	}
+
+	.form-footer {
+		padding: 20px 0px;
+		text-align: center;
+	}
+	.form-footer button {
+		width: 100%;
+	}
+	#id_username {width: 230px;}
+	#id_password {width: 230px;}
+	#btn-signup-link {width: 100%;}
+
+	</style>
+{% endblock %}

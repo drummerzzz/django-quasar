@@ -1,0 +1,114 @@
+{% extends 'newLayout/base.html' %}{% block content %}
+<div class="page-content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-11 col-lg-7 step-content">
+
+                {% if not simple_url %}
+                <nav class="step-nav">
+                    <a href="{% url 'signup:theme_choice' %}">
+                        <li>Selecione sua área</li>
+                    </a>
+                    <a href="{% url 'signup:customize' %}?theme={{request.session.theme}}">
+                        <li>Personalize</li>
+                    </a>
+                    <a href="{% url 'signup:plan_choice' %}">
+                        <li>Selecionar Plano</li>
+                    </a>
+                    <li class="active">Acessar</li>
+                </nav>
+                {% endif %}
+
+                <div class="form-wrapper">
+                    <div class="content">
+                        <h3>Cadastre-se</h3>
+                        <form id="form_signup" class="form-group" action="" method="post">
+                            {% csrf_token %}
+                            {% for field in form %}
+                            <div class="form-group">
+                                {% if not field.label in 'Tema' %}
+                                {{field}}
+                                <div class="text-danger">
+                                    {{field.errors}}
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                            {% if form.theme %}
+                            <div class="form-group">
+                                <label for="id_theme">Área profissional</label>
+                                {{form.theme}}
+                                <div class="text-danger">
+                                    {{form.theme.errors}}
+                                </div>
+                            </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <label for="id_termo">
+                                    <span>
+                                        <input style="display: inline-block !important;" type="checkbox" id="id_termo"
+                                            name="termo" />
+                                    </span>Estou de acordo com as
+                                    <a target="_blank" href="{% url 'home:privacidade' %}">políticas de privacidade</a>
+                                    e <a target="_blank" href="{% url 'home:termos' %}">termos de uso</a>.
+                                </label>
+                            </div>
+                            <div class="text-center">
+                                <input type="submit" value="Crie sua conta">
+                            </div>
+                        </form>
+                        <!-- <div class="or"><span>ou</span></div>
+                        <div class="social-login">
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="#" class="google-link">
+                                        <div class="media"><img src="images/google.png" alt="">
+                                            <div class="media-body">Entre com sua conta do Google</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="facebook-link">
+                                        <div class="media"><img src="images/facebook.png" alt="">
+                                            <div class="media-body">Entre com sua conta do Facebook</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <a href="{% url 'login' %}" class="login-btn">Já tenho uma conta</a>
+                </div>
+                <div class="pagination-links clearfix">
+
+                    <div class="row">
+                        <div class="col-3 align-self-center">
+                            {% if simple_url %}
+                            <a href="{% url 'signup:simple_plan_choice' %}" class="back-link">Anterior</a>
+                            {% else %}
+                            <a href="{% url 'signup:plan_choice' %}" class="back-link">Anterior</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} {% block script %}
+
+<script>
+    $("#form_signup").submit(function (e) {
+        if (!$("#id_termo").is(':checked')) {
+            e.preventDefault()
+            alert("Por favor aceite os temos de uso e política de privacidade!")
+        }
+    })
+    $("#id_whatsapp").mask('(99) 999999999')
+    $(function () {
+        $('form').focusin()
+    });
+</script>
+
+{% endblock script %}

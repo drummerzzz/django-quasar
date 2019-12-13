@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Viralize | Plataforma de compra de publicações para Instagram, Facebook e Linkedin</title>
+    <!--[if lt IE 9]><script src="{% static 'js/html5shiv.min.js' %}"></script><![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:,400,400i,500,500i,700,700i,900,900i&display=swap"
+        rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/loading.css' %}" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="{% static 'images/apple-touch-icon-144-precomposed.png' %}">
+    {% include "favicon.html" %}
+    <style>
+        #tidio-chat iframe {
+            bottom: 0em !important;
+        }
+
+        .item {
+            min-height: 335px;
+        }
+
+        @media only screen and (max-width: 980px) {
+            .item {
+                min-height: 282.5px;
+            }
+
+            #tidio-chat iframe {
+                right: 10px !important;
+                bottom: 3em !important;
+            }
+        }
+
+        a,
+        button {
+            outline: none !important;
+            cursor: pointer;
+        }
+
+        button {
+            border: none !important;
+        }
+
+        img {
+            margin: 0 !important;
+            padding: 0 !important
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 1px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .post {
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+    {% block style %} {% endblock style %}
+
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1201087903420294');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1201087903420294&ev=PageView&noscript=1" /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+
+</head>
+
+<body>
+    {% include "loading.html" %} {% block menu %}
+    <!-- Menu -->
+    {% include 'menu.html' %} {% endblock menu %} {% block content %} {% endblock content %}
+
+    <!-- Bootstrap core JavaScript================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{% static 'js/jquery-min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+    <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/accordion.js' %}"></script>
+    <script src="{% static 'js/jquery.matchHeight-min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src='https://unpkg.com/vue-load-image'></script> -->
+    <!-- <script src="{% static 'payments/vue-the-mask.js'%}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="//code.tidio.co/dscwmt6mjzife3eknq6ktp08lj9sshmq.js"></script>
+    {% if user.is_authenticated %}
+    <script>
+        document.tidioIdentify = {
+            distinct_id: '{{ request.user.pk}}',
+            email: '{{ request.user.email}}',
+            name: '{{ request.user.customer.name}}'
+        };
+    </script>
+    {% endif %}
+    <script>
+        $('.coleql_height').matchHeight();
+        $(document).ready(function () {
+            $(".custom-accordion").accordionjs();
+            $("#loading").fadeOut("slow");
+        });
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49441733-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-49441733-5');
+    </script>
+    {% if user.is_authenticated %}
+    <!-- Hotjar Tracking Code for viralize.online -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 1532551,
+                hjsv: 6
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <script>
+        var vm
+        vm = new Vue({
+            el: '#app',
+
+            mounted() {
+                //this.listar_imgs();
+                // this.listar_cores();
+                //this.listar_temas();
+            },
+
+            delimiters: ['[[', ']]'],
+
+            data: {
+                imgs: [],
+                //themes: [],
+            },
+
+            methods: {
+                /*listar_cores() {
+                    try {
+                        var url = '/api/colors/'
+                        axios.get(url).then(function(r) {
+                            result = r.data;
+                        });
+
+                    } catch (e) {
+                        console.log(e);
+                    }
+                },*/
+                listar_imgs() {
+                    try {
+                        var base_url = '/api/colorfulposts/'
+                        var url = base_url + 'filter/{{user.customer.theme.name}}/{{user.customer.color.hexadecimal}}'
+                        axios.get(url).then(function (r) {
+                            console.log('get imgs ' + url);
+                            result = r.data;
+                            vm.imgs = result['results']
+                        });
+                    } catch (e) {
+                        console.log(e);
+                    }
+                },
+                get_imgs_by_theme(theme) {
+                    try {
+                        var base_url = '/api/colorfulposts/'
+                        var url = base_url + 'filter/' + theme + '/{{user.customer.color.hexadecimal}}'
+                        axios.get(url).then(function (r) {
+                            console.log('get imgs ' + url);
+                            result = r.data;
+                            vm.imgs = result['results']
+                        });
+                    } catch (e) {
+                        console.log(e);
+                    }
+                },
+                /*  listar_temas() {
+                      try {
+                          var url = '/api/themes/'
+                          axios.get(url).then(function(r) {
+                              console.log('get themes');
+                              result = r.data;
+                              vm.themes = result['results']
+                          });
+                      } catch (e) {
+                          console.log(e);
+                      }
+                  }*/
+            }
+        });
+        $('#id_theme').change(function () {
+            let theme = $(this).val()
+            if (theme != "") {
+                vm.get_imgs_by_theme(theme)
+            }
+        })
+    </script>
+
+    <script>
+        var example2 = new Vue({
+            el: '#carouselExampleControls',
+            delimiters: ['[[', ']]'],
+
+            mounted() {
+                this.get_imgs('{{user.customer.color.hexadecimal}}')
+            },
+            data: {
+                posts: []
+            },
+            // define métodos dentro do objeto `methods`
+            methods: {
+                get_imgs: function (color) {
+                    try {
+                        var base_url = '/api/colorfulposts/'
+                        var url = base_url + 'filter/{{user.customer.theme.name}}/' + color
+                        axios.get(url).then(function (r) {
+                            result = r.data;
+                            example2.posts = result['results']
+                            console.log(url)
+                        });
+                    } catch (e) {
+                        console.log(e);
+                    }
+                },
+            }
+        })
+
+        function update_image(color) {
+            $("#post_content").addClass('d-none');
+            example2.get_imgs(color);
+            example2.$forceUpdate();
+            setTimeout(function () {
+                $("#post_content").removeClass('d-none');
+                $("#post_content").hide();
+                $("#post_content").fadeIn('slow');
+            }, 1000)
+        }
+    </script>
+    {% endif %}
+    {% block script %} {% endblock script %}
+</body>
+<!-- Footer -->
+{% include 'footer.html' %}
+
+</html>
