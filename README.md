@@ -142,14 +142,6 @@ $ heroku config:set DJANGO_SECRET_KEY='...(your django SECRET_KEY value)...'
 $ git push heroku
 ```
 
-Heroku's nodejs buildpack will handle install for all the dependencies from the [`package.json`](/package.json) file.
-It will then trigger the `postinstall` command which calls `yarn build`.
-This will create the bundled `dist` folder which will be served by whitenoise.
-
-The python buildpack will detect the [`Pipfile`](/Pipfile) and install all the python dependencies.
-
-The [`Procfile`](/Procfile) will run Django migrations and then launch Django'S app using gunicorn, as recommended by heroku.
-
 ##### Heroku One Click Deploy
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gtalarico/django-vue-template)
