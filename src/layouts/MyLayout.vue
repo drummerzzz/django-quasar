@@ -11,13 +11,20 @@
           aria-label="Menu"
         />
 
-        <q-toolbar-title>Quasar App</q-toolbar-title>
+        <q-toolbar-title>
+          Quasar App
+        </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered content-class="bg-grey-2">
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      bordered
+      content-class="bg-grey-2"
+    >
       <q-list>
         <q-item-label header>Essential Links</q-item-label>
         <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
@@ -76,15 +83,8 @@
         </q-item>
       </q-list>
     </q-drawer>
+
     <q-page-container>
-      <div class="q-pa-md">
-        <q-carousel animated v-model="slide" arrows navigation infinite>
-          <q-carousel-slide :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
-          <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
-          <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
-       
-        </q-carousel>
-      </div>
       <router-view />
     </q-page-container>
   </q-layout>
@@ -92,13 +92,12 @@
 
 <script>
 export default {
-  name: "MyLayout",
+  name: 'MyLayout',
 
-  data() {
+  data () {
     return {
-      leftDrawerOpen: false,
-      slide: 1
-    };
+      leftDrawerOpen: false
+    }
   }
-};
+}
 </script>

@@ -60,6 +60,7 @@ module.exports = function (ctx) {
       showProgress: true,
       gzip: false,
       analyze: false,
+      publicPath:'static',
       // Options below are automatically set depending on the env, set them if you want to override
       // preloadChunks: false,
       // extractCSS: false,
@@ -159,7 +160,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'teste'
+        appId: 'django-vue-quasar'
       },
 
       // keep in sync with /src-electron/main-process/electron-main

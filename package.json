@@ -1,5 +1,5 @@
 {
-  "name": "teste",
+  "name": "django-vue-quasar",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
   "productName": "Quasar App",
@@ -8,7 +8,8 @@
   "author": "Drummerzzz <jf.interatividade@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
