@@ -64,3 +64,6 @@ all: create-venv setup-dev #git-up
 
 front:
 	yarn build
+
+yarn:
+	yarn serve

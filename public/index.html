@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Viralize | Plataforma de compra de publicações para Instagram, Facebook e Linkedin</title>
-  <!--[if lt IE 9]><script src="{% static 'js/html5shiv.min.js' %}"></script><![endif]-->
+  <!--[if lt IE 9]><script src="/static/js/html5shiv.min.js"></script><![endif]-->
   <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:,400,400i,500,500i,700,700i,900,900i&display=swap"
     rel="stylesheet">
-  <link href="{% static 'css/style.css' %}" rel="stylesheet">
-  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-  <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-  <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
-  <link href="{% static 'css/loading.css' %}" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/css/responsive.css" rel="stylesheet">
+  <link href="/static/css/loading.css" rel="stylesheet">
   <link rel="apple-touch-icon-precomposed" sizes="144x144"
-    href="{% static 'images/apple-touch-icon-144-precomposed.png' %}">
+    href="/static/images/apple-touch-icon-144-precomposed.png">
 
   <style>
     #tidio-chat iframe {
@@ -68,7 +66,6 @@
       border-radius: 10px 10px 0 0;
     }
   </style>
-  {% block style %} {% endblock style %}
 
 
   <!-- Facebook Pixel Code -->
@@ -99,33 +96,30 @@
   <!-- Menu -->
 
   <noscript>
-    {% include "loading.html" %} {% block menu %}
     <!-- Menu -->
     
-    {% endblock %}
     <strong>We're sorry but django-vue doesn't work properly without JavaScript enabled. Please enable it to
       continue.</strong>
   </noscript>
   <div id="app">
-    {% block content %} {% endblock content %}
   </div>
 
   <!-- Bootstrap core JavaScript================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="{% static 'js/jquery-min.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
-  <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
-  <script src="{% static 'js/script.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.js' %}"></script>
-  <script src="{% static 'js/accordion.js' %}"></script>
-  <script src="{% static 'js/jquery.matchHeight-min.js' %}"></script>
-  <script src="{% static 'js/range-slider.js' %}"></script>
+  <script src="/static/js/jquery-min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="/static/js/ie-emulation-modes-warning.js"></script>
+  <script src="/static/js/custom.js"></script>
+  <script src="/static/js/script.js"></script>
+  <script src="/static/js/owl.carousel.js"></script>
+  <script src="/static/js/accordion.js"></script>
+  <script src="/static/js/jquery.matchHeight-min.js"></script>
+  <script src="/static/js/range-slider.js"></script>
   <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
   <!-- <script src='https://unpkg.com/vue-load-image'></script> -->
-  <!-- <script src="{% static 'payments/vue-the-mask.js'%}"></script> -->
+  <!-- <script src="/static/payments/vue-the-mask.js'%}"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
   <script src="//code.tidio.co/dscwmt6mjzife3eknq6ktp08lj9sshmq.js"></script>
   {% if user.is_authenticated %}
@@ -175,7 +169,6 @@
   </script>
 
   {% endif %}
-  {% block script %} {% endblock script %}
 </body>
 <!-- Footer -->
 
