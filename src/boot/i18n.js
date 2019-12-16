@@ -16,3 +16,4 @@ export default ({ app }) => {
 }
 
 export { i18n }
+

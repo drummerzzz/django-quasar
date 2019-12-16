@@ -60,22 +60,12 @@ module.exports = function (ctx) {
       showProgress: true,
       gzip: false,
       analyze: false,
-      publicPath:'static',
       // Options below are automatically set depending on the env, set them if you want to override
       // preloadChunks: false,
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
-        cfg.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-          options: {
-            formatter: require('eslint').CLIEngine.getFormatter('stylish')
-          }
-        })
       }
     },
 
@@ -100,9 +90,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Viralize | Plataforma de compra de publicações para Instagram, Facebook e Linkedin',
-        short_name: 'Viralize | Plataforma de compra de publicações para Instagram, Facebook e Linkedin',
-        description: 'Viralize | Plataforma de compra de publicações para Instagram, Facebook e Linkedin',
+        name: 'Quasar App',
+        short_name: 'Quasar App',
+        description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -140,7 +130,7 @@ module.exports = function (ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
-      id: 'online.viralize'
+      id: 'org.cordova.quasar.app'
     },
 
 
@@ -169,7 +159,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'viralize'
+        appId: 'teste'
       },
 
       // keep in sync with /src-electron/main-process/electron-main
