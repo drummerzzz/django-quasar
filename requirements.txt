@@ -32,7 +32,7 @@ pbr==5.1.1
 Pillow==5.4.1
 psycopg2==2.7.6.1
 psycopg2-binary==2.8.3
-PyPDF2==1.26.0
+PyPDF2==1.27.5
 python-crontab==2.3.8
 python-dateutil==2.7.5
 python-decouple==3.1
